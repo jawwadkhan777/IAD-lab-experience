@@ -208,22 +208,24 @@ nav ul li a:hover::after {
 }
 .team_list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2,auto);
     grid-gap: 40px;
     margin-top: 50px;
-    height: 750px;
+    /* height: 100vh; */
 }
 .member {
     border-radius: 10px;
     position: relative;
     overflow: hidden;
-    /* height: 75%; */
 }
 .member img {
     width: 100%;
+    height: 100%;
     border-radius: 10px;
     display: block;
     transition: transform 0.5s;
+    object-fit: cover;
 }
 .info {
     width: 100%;
@@ -415,7 +417,7 @@ nav .fa-solid {
         padding: 10px 30px;
     }
     .sub_title {
-        font-size: 35px;
+        font-size: 40px;
         text-align: left;
     }
     .project_description_col_1, .project_description_col_2 {
@@ -449,5 +451,21 @@ nav .fa-solid {
     }
     .copyright {
         font-size: 14px;
+    }
+}
+@media (max-width: 1000px) {
+    .team_list {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+@media (max-width: 768px) {
+    .team_list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .team_list {
+        grid-template-columns: repeat(1, 1fr);
     }
 }
