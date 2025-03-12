@@ -6,6 +6,12 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 93px;
+    
+}
+
 body {
     /* background-color: #36454F; */
     background-color: black;
@@ -19,16 +25,21 @@ body {
     background-size: cover;
     background-position: center;
 }
-
 .container {
     padding: 10px 10%;
-    background-color: black;
 }
 nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
+    background-color: black; 
+    width: 100%;
+    padding: 10px 10%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
 }
 .logo {
     width: 100px;
@@ -57,10 +68,9 @@ nav ul li a::after {
 nav ul li a:hover::after {
     width: 100%;
 }
-
 .header_text {
     padding: 10px 10%;
-    margin-top: 20%;
+    margin-top: 27%;
     font-size: 30px;
 }
 .header_text h1 {
@@ -87,9 +97,10 @@ nav ul li a:hover::after {
     background: #fff600;
     color: #36454F;
 }
+
 /* project description */
 #project_description {
-    padding: 80px 0;
+    padding: 100px 0;
     color: #ababab;
 }
 .row {
@@ -159,7 +170,7 @@ nav ul li a:hover::after {
 
 /* question and answer */
 #ques_ans {
-    padding: 30px 0;
+    padding: 20px 0;
 }
 .ques_list {
     display: grid;
@@ -262,6 +273,9 @@ nav ul li a:hover::after {
 }
 
 /* feedback part */
+#feedback {
+    padding: 30px 0;
+}
 .feedback_left {
     flex-basis: 35%;
 }
@@ -302,8 +316,29 @@ form .btn2 {
     font-size: 18px;
     margin-top: 20px;
 }
+#succ-msg {
+    color: #5cb85c;
+    margin-top: -30px;
+    display: block;
+}
 
 /* gratitude part */
+#gratitude {
+    padding-top: 30px;
+}
+#gratitude .container {
+    padding-bottom: 70px;
+}
+.gratitude_left {
+    flex-basis: 45%;
+}
+.gratitude_left img {
+    width: 100%;
+    border-radius: 20px;
+}
+.gratitude_right {
+    flex-basis: 50%;
+}
 .gratitude_message {
     margin: 30px 0;
 }
@@ -320,4 +355,99 @@ form .btn2 {
     color: red;
 }
 
+/* small screen css */
+nav .fa-solid {
+    display: none;
+}
+@media only screen and (max-width: 600px) {
+    #header {
+        background-image: url(images/group-mobile.png);
+    }
+    .container {
+        background: none;
+    }
+    .logo {
+        width: 70px;
+    }
+    .header_text {
+        margin-top: 100%;
+        font-size: 16px;
+    }
+    .header_text h1 {
+        font-size: 30px;
+        margin-top: 10px;
+    }
+    nav .fa-solid {
+        display: block;
+        font-size: 25px;
+    }
+    nav ul {
+        background: #fff600;
+        position: fixed;
+        top: 0;
+        right: -200px;
+        width: 200px;
+        height: 100vh;
+        padding-top: 50px;
+        color: #36454F;
+        z-index: 2;
+        transition: right 0.5s;
+    }
+    nav ul li {
+        display: block;
+        margin: 25px;
+    }
+    nav ul li a::after {
+        background: #36454F;
+    }
+    nav ul li a {
+        color: #36454F;
 
+    }
+    nav ul .fa-solid {
+        position: absolute;
+        top: 25px;
+        left: 25px;
+        cursor: pointer;
+    }
+    .btn {
+        margin: 30px auto;
+        padding: 10px 30px;
+    }
+    .sub_title {
+        font-size: 35px;
+        text-align: left;
+    }
+    .project_description_col_1, .project_description_col_2 {
+        flex-basis: 100%;
+    }
+    .project_description_col_1 {
+        margin-bottom: 30px;
+    }
+    .project_description_col_2 {
+        font-size: 14px;
+        display: contents;
+    }
+    .tab_links {
+        font-size: 16px;
+        margin-right: 20px;
+    }
+    .team_list {
+        height: 100%;
+    }
+    .feedback_left, .feedback_right {
+        flex-basis: 100%;
+    }
+    .gratitude_left, .gratitude_right {
+        flex-basis: 100%;
+    }
+    .gratitude_left {
+        margin-bottom: 30px;
+    }
+    .gratitude_right h1 {
+        font-size: 30px;
+    }
+    .copyright {
+        font-size: 14px;
+    }
+}
