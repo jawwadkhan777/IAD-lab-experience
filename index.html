@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IAD Lab Experience</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/2420ea8028.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="images/logo.png" alt="logo" class="logo">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Project</a></li>
+                    <li><a href="#">Q/A</a></li>
+                    <li><a href="#">Team</a></li>
+                    <li><a href="#">Feedback</a></li>
+                    <li><a href="#">Gratitude</a></li>
+                    <i class="fa-solid fa-xmark"></i>
+                </ul>
+                <i class="fa-solid fa-bars"></i>
+            </nav>
+        </div>
+            <div class="header_text">
+                <p><span class="text_decor">IAD</span> Lab Compitition with Group-7, Supervised by Ma'am <span class="text_decor">Dr. Humera Tariq</span></p>
+                <h1>We are <span class="text_decor">Group-6</span>, <br>created a Math Quiz Game</h1>
+                <button class="btn" onclick="showGame()">Play Game</button>
+                <button class="btn btn2" onclick="viewCode()">Source Code</button>
+            </div>
+    </div>
+    <!-- project description section-->
+    <div id="project_description">
+        <div class="container">
+            <div class="row">
+                <div class="project_description_col_1">
+                    <img src="images/quiz-game-1.png" alt="game-pic" class="pic1">
+                    <img src="images/quiz-game-2.png" alt="game-pic" class="pic2">
+                </div>
+                <div class="project_description_col_2">
+                    <h1 class="sub_title">
+                        <span class="text_decor">Project</span> Overview
+                    </h1>
+                    <p>The Math Quiz Challenge is a web-based interactive quiz designed to enhance mathematical skills through dynamic problem-solving. Developed using HTML, CSS, and JavaScript, it generates randomized math problems with multiple operands and operators, ensuring a challenging and engaging experience. Users receive real-time validation and feedback, with intuitive navigation controls for flexibility.</p>
+                    <div class="tab_titles">
+                        <p class="tab_links active_link" onclick="openTab('techStack')">Tech Stack</p>
+                        <p class="tab_links" onclick="openTab('bookProb')">Book Problem</p>
+                        <p class="tab_links" onclick="openTab('features')">Features</p>
+                        <p class="tab_links" onclick="openTab('futureImp')">Future Improvements</p>
+                    </div>
+                    <div class="tab_contents active_tab" id="techStack">
+                        <ul>
+                            <li><span>HTML, CSS</span> – For UI design and styling</li>
+                            <li><span>JavaScript</span> – For implementing logic, generating, and validating math problems</li>
+                            <li><span>VS Code</span> – Primary code editor for development</li>
+                            <li><span>Git and GitHub</span> – For version control and collaborative development</li>
+                            <li><span>Netlify</span> – For seamless deployment and hosting</li>
+                        </ul>
+                    </div>
+                    <div class="tab_contents" id="bookProb">
+                        <ul>
+                            <li><span>4.22.</span> – Write a JavaScript program that generates 10 random math problems. Each math problem should consist of three operands (random integers between −10 and 10, inclusive) and
+                                two operators (randomly drawn from +, -, *, and %). For example, a problem might be
+                                -4 + 7 % 3. Display each problem in a prompt box, and allow the user to enter an integerrepresenting the value of the problem (following standard JavaScript operator precedence
+                                rules). After all 10 problems have been answered, output the number of correct answers.</li>
+                        </ul>
+                    </div>
+                    <div class="tab_contents" id="features">
+                        <ul>
+                            <li><span>Dynamic Question Generation</span> – Generates random math problems with three operands and two operators
+                            </li>
+                            <li><span>Interactive User Flow</span> – Users must provide an answer before proceeding to the next question</li>
+                            <li><span>Validation & Feedback</span> – Immediate answer checking with real-time feedback</li>
+                            <li><span>Navigation Controls</span> – Includes 'Next' and 'Skip' buttons for enhanced flexibility</li>
+                            <li><span>Error Handling</span> – Alerts users if they attempt to proceed without providing an answer</li>
+                            <li><span>Theme Toggle Feature</span> – Default dark mode with an option to switch to light mode for accessibility</li>
+                            <li><span>Responsive Design</span> – Optimized for seamless usage on both mobile and desktop devices</li>
+                            <li><span>Deployment on Netlify</span> – Ensures global accessibility with a fast and reliable hosting solution</li>
+                        </ul>
+                    </div>
+                    <div class="tab_contents" id="futureImp">
+                        <ul>
+                            <li><span>Leaderboard</span> – Implementing a scoring system with a leaderboard to enhance competition</li>
+                            <li><span>Difficulty Level</span>  – Introducing additional mathematical operations and adjustable difficulty settings</li>
+                            <li><span>Timer-Based Challenges</span> – Adding a countdown timer to create a more engaging and challenging experience</li>
+                            <li><span>Enhanced UI/UX</span>  – Improving visual appeal and user interaction through smooth animations and intuitive design</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- question and answer section -->
+    <div id="ques_ans">
+        <div class="container">
+            <h1 class="sub_title">
+                <span class="text_decor">Q/A</span> asked by Ma'am and Group-7 
+            </h1>
+            <div class="ques_list">
+                <div>
+                    <i class="fa-solid fa-circle-question"></i>
+                    <h2>1. Where are the user's answers stored?</h2>
+                    <!-- <i class="fa-solid fa-comment"></i> -->
+                    <p>The user's answers are stored in the userAnswers array. As users submit their responses, their input is pushed into this array. If a question is skipped, null is stored to indicate that no answer was provided. This allows the system to track and evaluate user performance during the result calculation.</p>
+                </div>
+                <div>
+                    <i class="fa-solid fa-circle-question"></i>
+                    <h2>2. How does the UI transition from question display to results?</h2>
+                    <p>The transition from the question display to the result screen is managed using DOM manipulation. When the quiz reaches the last question, the function showResults() is triggered. This function hides the quiz container (#quiz_container) and displays the result container (#result-container).</p>
+                </div>
+                <div>
+                    <i class="fa-solid fa-circle-question"></i>
+                    <h2>3. How are the mathematical questions generated with operators?</h2>
+                    <p>The questions are dynamically generated using the generateQuestions() function. It randomly selects three numbers between -10 and 10 and assigns two different mathematical operators (+, -, *, %) using the Math.random() function. The numbers are formatted properly to handle negative values, and the final question string is stored in the questions array.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- team members section -->
+     <div id="team">
+        <div class="container">
+            <h1 class="sub_title">Meet Our <span class="text_decor">Team</span></h1>
+            <div class="team_list">
+                <div class="member">
+                    <img src="images/jawwad.jpg" alt="team-leader">
+                    <div class="info">
+                        <h3>Muhammad Jawwad Khan – Team Leader</h3>
+                        <p>Full Stack Web Developement Learner – CS Undergradute, UBIT/KU'25</p>
+                        <div class="web_links">
+                            <a href="https://www.linkedin.com/in/jawwadkhan777/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                            <a href="https://github.com/jawwadkhan777" target="_blank"><i class="fa-brands fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="member">
+                    <img src="images/mehdi.jpg" alt="team-leader">
+                    <div class="info">
+                        <h3>Syed Muhammad Mehdi</h3>
+                        <p>Embedded Engineer – CS Undergradute, UBIT/KU'25</p>
+                        <div class="web_links">
+                            <a href="https://www.linkedin.com/in/muhammad-mehdi-15a938265" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                            <a href="" target="_blank"><i class="fa-brands fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="member">
+                    <img src="images/fahad.jpg" alt="team-leader">
+                    <div class="info">
+                        <h3>Syed Fahad Ahmed</h3>
+                        <p>Web Development Learner – CS Undergradute, UBIT/KU'25</p>
+                        <div class="web_links">
+                            <a href="https://www.facebook.com/share/1ASXtrRRvY" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                            <a href="" target="_blank"><i class="fa-brands fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="member">
+                    <img src="images/umair.jpg" alt="team-leader">
+                    <div class="info">
+                        <h3>Umair Usmani</h3>
+                        <p>Flutter Development Learner – CS Undergradute, UBIT/KU'25</p>
+                        <div class="web_links">
+                            <a href="https://www.linkedin.com/in/umair-usmani-88ba591bb" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                            <a href="https://www.facebook.com/share/1EDn886XYR" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="member">
+                    <img src="images/hasnain.jpg" alt="team-leader">
+                    <div class="info">
+                        <h3>Muhammad Hasnain</h3>
+                        <p>Data Analyst + Data Science Enthusiast – CS Undergradute, UBIT/KU'25</p>
+                        <div class="web_links">
+                            <a href="https://www.linkedin.com/in/muhammad-hasnain-7522a8278" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                            <a href="https://github.com/HasnainEagle" target="_blank"><i class="fa-brands fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="member">
+                    <img src="images/ahmed.jpg" alt="team-leader">
+                    <div class="info">
+                        <h3>Ahmed Ibrahim</h3>
+                        <p>Data Analyst + Data Science Enthusiast – CS Undergradute, UBIT/KU'25</p>
+                        <div class="web_links">
+                            <a href="https://www.linkedin.com/in/ahmed-ibrahim-16728b2b2" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                            <a href="https://github.com/AhmedIbrahim41" target="_blank"><i class="fa-brands fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="member">
+                    <img src="images/jawad.jpg" alt="team-leader">
+                    <div class="info">
+                        <h3>Jawad Ahmed</h3>
+                        <p>Web Development Learner – CS Undergradute, UBIT/KU'25</p>
+                        <div class="web_links">
+                            <a href="" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                            <a href="" target="_blank"><i class="fa-brands fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="member">
+                    <img src="images/abdullah.jpg" alt="team-leader">
+                    <div class="info">
+                        <h3>Muhammad Abdullah</h3>
+                        <p>Experienced Full Stack Web Developer + AI Enthusiast – CS Undergradute, UBIT/KU'25</p>
+                        <div class="web_links">
+                            <a href="https://www.linkedin.com/in/muhammad-abdullah780" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                            <a href="https://github.com/MuhammadAbdullah780" target="_blank"><i class="fa-brands fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Feedback section -->
+    <div id="feedback">
+        <div class="container">
+            <div class="row">
+                <div class="feedback_left">
+                    <h1 class="sub_title">Your <span class="text_decor">Feedback</span></h1>
+                    <p><i class="fa-solid fa-comments"></i>We appreciate any feedback or suggestions!</p>
+                    <p><i class="fa-solid fa-download"></i>Download and view project documentation</p>
+                    <a href="files/project-documentation.pdf" class="btn" download>Project Documentation</a>
+                </div>
+                <div class="feedback_right">
+                    <form>
+                        <input type="text" name="name" placeholder="Your Name..." required>
+                        <input type="text" name="email" placeholder="Your Email..." required>
+                        <textarea name="feedback" placeholder="Your feedback and suggestions..." rows="7" required></textarea>
+                        <button type="submit" class="btn btn2">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- gratitude section -->
+     <div id="gratitude">
+        <div class="container">
+            <h1 class="sub_title">
+                Heartfelt <span class="text_decor">Gratitude</span>
+            </h1>
+            <p class="gratitude_message">We sincerely appreciate the opportunity to participate in the IAD Lab Competition alongside Group 7 under the esteemed supervision of Dr. Humera Tariq. This experience has been both challenging and rewarding, fostering teamwork, innovation, and technical growth. We extend our heartfelt thanks to Dr. Humera Tariq for her invaluable guidance, continuous support, and for organizing such a well-structured and engaging competition.</p>
+        </div>
+        <div class="copyright">
+            <p>Copyright &copy; 2025. Made with <i class="fa-solid fa-heart"></i> by <span class="text_decor">Group-6</span></p>
+        </div>
+     </div>
+
+    <!-- script file integrate -->
+    <script src="script.js"></script>
+</body>
+</html>
